@@ -1,2 +1,0 @@
-# Linux
-Linux系统
