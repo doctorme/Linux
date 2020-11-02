@@ -12,11 +12,11 @@ void input(void){
 	FILE *fp;
 	record *u=(record*)malloc(sizeof(record));
 	record *t=(record*)malloc(sizeof(record));
-	fp=fopen("./user.dat","r");
+	fp=fopen("./user.dat","w+");
 	printf("请输入写入通讯录的数据的条数:");
 	scanf("%d",&n);
 	printf("请依次输入 通讯录的序号 用户名 手机号 电话号码(空格隔开,每组数据用回车换行隔开):\n");
-	for(i=0;i<n;){
+	for(i=0;i<n;i++){
 		scanf("%u %s %s %s",&(u->id),u->name,u->htel,u->tel);
 		flag=0;
 		fseek(fp,0,SEEK_SET);	
@@ -32,6 +32,7 @@ void input(void){
 		else{
 			save(u,"a");
 		}
+		
 	}
 	fclose(fp);
 	fp=NULL;
